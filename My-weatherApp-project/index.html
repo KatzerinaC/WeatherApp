@@ -16,11 +16,138 @@
 </head>
 <body>
   <div class="container">
-    <h1>
-      Hello
-    </h1>
-    <a href=""class="btn btn-primary">click me</a> 
+   <div class="weather-app">
+  <form class="search-form" id="search-form">
+  <div class="row">
+  <div class="col-6">
+  <input type="text" 
+  placeholder="Enter a city..." 
+  autocomplete="off"
+  autofocus="on"
+  class="form-control shadow-sm"
+  id="search-input"
+  />
   </div>
+  <div class="col-3">
+  <input type="submit" value="search" 
+  class="form-control btn btn-primary shadow-sm w-100"
+  />
+  </div>
+  <div class="col-3">
+    <button type="button" class="btn btn-secondary w-100" id="location">Current</button>
+  </div>
+  </div>
+  </form>
+  <br/>
+  <br/>
+  <h1 id="city">   
+  </h1>
+  <br/>
+  <ul> 
+  <div id="date"></div>
+  <div id="description"></div>
+  </ul> 
+  <div class="row">
+  <div class="col-6">
+    <div class="clearfix">
+  <img src="#" 
+  class="weather-icon float-left"
+  /> 
+  <div class="float-left">
+  <span class="temperature" id="temperature"> </span>
+  <span class="units">°C</span>
+</div>
+</div>
+</div>
+ <div class="col-6">
+  <ul>
+  <li>
+  Humidity: <span id="humidity"></span> % 
+  </li>
+  <li>
+  Wind: <span id="wind"></span>km/h
+  </li>
+    </ul>
+    </div>
+    </div>
+<br/>
+<br/>
+<div class="row weather-forecast">
+  <div class="col-2">
+    <h3>
+      Wed
+     </h3>
+      <div>
+      <img class=forescast-icon src="images/rainy.png" alt=""width="40px">
+      </div>
+       <strong>
+        13°C  
+      </strong>
+  </div>
+  <div class="col-2">
+    <h3>
+      Thur
+      </h3>
+       <div>
+        <img class=forescast-icon src="images/sunny-cloudy.png" alt=""width="50px">
+      </div>
+    <strong>
+        11°C
+      </strong>
+  </div>
+  <div class="col-2">
+    <h3>
+      Fri
+      </h3>
+       <div>
+      <img class=forescast-icon src="images/sunny-cloudy.png" alt=""width="50px">
+      </div>
+    <strong>
+        16°C
+      </strong>
+  </div>
+  <div class="col-2">
+    <h3>
+      Sat
+      
+      </h3>
+       <div>
+      <img class=forescast-icon src="images/rainy.png" alt=""width="40px">
+      </div>
+      <strong>
+        14°C
+      </strong>
+      </div>
+      <div class="col-2">
+      <h3>
+      Sun
+     </h3>
+       <div>
+      <img class=forescast-icon src="images/rainy.png" alt=""width="40px">
+      </div>
+     <strong>
+        15°C
+      </strong>
+  </div>
+  <div class="col-2">
+    <h3>
+      Mon
+     </h3>
+      <div>
+      <img class=forescast-icon src="images/rainy.png" alt=""width="40px">
+      </div>
+       <strong>
+        10°C  
+      </strong>
+</div>
+</div>
+  </div>
+
+  <small>
+  <a href="https://github.com/KatzerinaC/WeatherApp" target="_blank"
+  >Open-source code</a>
+  </small>
+  
   <script src="src/app.js"></script>
 </body>
 </html>
