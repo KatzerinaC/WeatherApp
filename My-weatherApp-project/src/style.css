@@ -16,13 +16,14 @@ h1 { font-family:'Alkalami', serif;
  }
  ul {font-family: 'Lato', sans-serif;
     color: #c06c84;
-    text-transform: capitalize;
     font-size: 22px;
     font-weight: 100;
     text-align: right;
                    
 }
-
+ul ::first-letter{
+   text-transform: capitalize;
+}
 .weather-temperature img {
   margin-right: 10px;
   height: 64px;
