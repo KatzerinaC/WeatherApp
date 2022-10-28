@@ -38,15 +38,13 @@ h1 { font-family:'Alkalami', serif;
 .weather-temperature units {
   position: relative;
   font-size: 18px;
-  top: -34px;
+   top: -60px;
 }
 h3 {font-size: 13px;
     color: #672f9b;
     font-family: "Reem Kufi Fun", sans-serif;
 
 }
-
- 
 
 .weather-app-wrapper{
   max-width: 600px ;
@@ -57,7 +55,6 @@ h3 {font-size: 13px;
 .weather-app {
   border: 1px solid #6d3956;
   padding: 20px;
-  
   border-radius: 5px;
   
 }
