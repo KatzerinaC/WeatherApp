@@ -27,18 +27,27 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.time * 10000) ;
+  dateElement.innerHTML = formatDate(response.data.time * 1000) ;
   iconElement.setAttribute(
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+}
+  function search(query){
+  let apiKey = "3423f9e30e80437oae320f8639950tb8";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=metric`;
+  
+  axios.get(apiUrl).then(displayTemperature);
+  }
 
+function handleSubmit(event){
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  search(searchInputElement.value);
 }
 
+search ("Berlin");
 
-let apiKey= "3423f9e30e80437oae320f8639950tb8";
-let query = "Berlin";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayTemperature);
+  let form = document.querySelector("#search-form");
+  form.addEventListener("submit", handleSubmit);
