@@ -60,3 +60,13 @@ h3 {font-size: 13px;
   border-radius: 5px;
   
 }
+
+.weather-temperature .active {
+
+  color:#6d3956;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
