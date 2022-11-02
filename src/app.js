@@ -13,7 +13,8 @@ function formatDate(timeStamp){
 return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast(){
+function displayForecast(response){
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat","Sun" ];
@@ -40,7 +41,12 @@ function displayForecast(){
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 };
-
+function getForeast(coordinates){
+  console.log(coordinates);
+  let apiKey = "3423f9e30e80437oae320f8639950tb8";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayForecast);
+}
 function displayTemperature(response) {
   
   let temperatureElement = document.querySelector("#temperature");
@@ -64,6 +70,8 @@ celsiusTemperature = response.data.temperature.current;
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  getForeast(response.data.coordinates);
 }
   function search(query){
   let apiKey = "3423f9e30e80437oae320f8639950tb8";
@@ -110,4 +118,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 
 search ("Berlin");
-displayForecast();
